@@ -1,0 +1,1 @@
+yt-dlp -o "/storage/0000-0000/yt-dlp/%(title)s.%(ext)s" --extract-audio --audio-format mp3 $1
