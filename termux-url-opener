@@ -1,0 +1,2 @@
+killall -9 mpv
+yt-dlp -f 251 -o - $1 | mpv -
