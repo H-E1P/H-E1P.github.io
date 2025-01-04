@@ -7,8 +7,9 @@ const searchParams = new URLSearchParams(window.location.search);
 let prev = searchParams.get('y');
 const targetUrl = searchParams.get('x');
 
-function getNext() {
-    return URLRNormalization(targetUrl);
+function getNext(hash) {
+    const h = URLRNormalization(hash);
+    return () => {h(targetUrl)};
 }
 
 let next;
@@ -32,11 +33,12 @@ function copyCurrentUrl() {
     });
 }
 
-function app(updateButton) {
+function app(updateButton, hash) {
+    const __next__ = getNext(hash);
     function main() {
-        next = getNext();
+        next = __next__();
         while (next === prev) {
-            next = getNext();
+            next = __next__();
         }
         const eventer = updates(updateButton, main);
         updateButton.addEventListener('click', eventer);
