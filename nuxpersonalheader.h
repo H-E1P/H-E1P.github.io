@@ -6,6 +6,7 @@
 *
 * # How2Install
 * can install by `wget http://h-e1p.github.io/nuxpersonalheader.h`
+* also can use `curl -O http://h-e1p.github.io/nuxpersonalheader.h`
 *
 */
 
@@ -22,5 +23,7 @@
 #define input INPUT
 #define inp input
 #define MAIN void main(void)
+#define ELIF else if
+#define elif ELIF
 
 #endif
