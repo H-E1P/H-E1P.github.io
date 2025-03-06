@@ -25,5 +25,6 @@
 #define MAIN void main(void)
 #define ELIF else if
 #define elif ELIF
+#define RANGE(a, x, b) a x && x b
 
 #endif
